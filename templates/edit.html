@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Editing</title>
+</head>
+<body>
+	<h1>Please Edit Information</h1>
+
+	<form action='/{{ id }}/edit/alter' method='POST'>
+		<label for="name">Name:<input type="text" name="name" id="name"></label>
+		<label for="age">Age:<input type="text" name="age" id="age"></label>
+		<input type="submit" value="Edit">
+	</form>
+</body>
+</html>

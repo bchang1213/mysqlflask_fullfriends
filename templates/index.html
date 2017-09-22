@@ -9,24 +9,24 @@
 		<tr>
 			<th>Name</th>
 			<th>Age</th>
-			<th>Friend Since</th>
+			<th>Join Date</th>
 			<th>Year</th>
+			<th>Options</th>
 		</tr>
 		{% for friend in all_friends: %}
 		<tr>
-			<td>{{ friend['name'] }}</td>
+			<td><a href="/{{ friend['id'] }}">{{ friend['name'] }}</a></td>
 			<td>{{ friend['age'] }}</td>
 			<td>{{ friend['join_date'] }}</td>
 			<td>{{ friend['year'] }}</td>
+			<td>
+				<a href="/{{ friend['id'] }}">Show</a>
+				<a href="/{{ friend['id'] }}/edit">Edit</a>
+				<a href="/{{ friend['id'] }}/delete">Delete</a>
+			</td>
 		</tr>
 		{% endfor %}
 	</table>
-
-	<h2>Add a Friend</h2>
-	<form action='/friends' method='POST'>
-		<label for="name">Name:<input type="text" name="name" id="name"></label>
-		<label for="age">Age:<input type="text" name="age" id="age"></label>
-		<input type="submit" value="Add">
-	</form>
+	<a href="/new">Create New User</a>
 </body>
 </html>
